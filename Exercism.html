@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://exercism.org/tracks/java/exercises/hello-world/edit -->
+<html lang="en-US" class="js-focus-visible" data-js-focus-visible=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.ͼ1.cm-focused {outline: 1px dotted #212121;}
+.ͼ1 {position: relative !important; box-sizing: border-box; display: flex !important; flex-direction: column;}
+.ͼ1 .cm-scroller {display: flex !important; align-items: flex-start !important; font-family: monospace; line-height: 1.4; height: 100%; overflow-x: auto; position: relative; z-index: 0;}
+.ͼ1 .cm-content {margin: 0; flex-grow: 2; min-height: 100%; display: block; white-space: pre; word-wrap: normal; box-sizing: border-box; padding: 4px 0; outline: none;}
+.ͼ1 .cm-lineWrapping {white-space: pre-wrap; overflow-wrap: anywhere;}
+.ͼ2 .cm-content {caret-color: black;}
+.ͼ3 .cm-content {caret-color: white;}
+.ͼ1 .cm-line {display: block; padding: 0 2px 0 4px;}
+.ͼ1 .cm-selectionLayer {z-index: -1; contain: size style;}
+.ͼ1 .cm-selectionBackground {position: absolute;}
+.ͼ2 .cm-selectionBackground {background: #d9d9d9;}
+.ͼ3 .cm-selectionBackground {background: #222;}
+.ͼ2.cm-focused .cm-selectionBackground {background: #d7d4f0;}
+.ͼ3.cm-focused .cm-selectionBackground {background: #233;}
+.ͼ1 .cm-cursorLayer {z-index: 100; contain: size style; pointer-events: none;}
+.ͼ1.cm-focused .cm-cursorLayer {animation: steps(1) cm-blink 1.2s infinite;}
+@keyframes cm-blink {50% {visibility: hidden;}}
+@keyframes cm-blink2 {50% {visibility: hidden;}}
+.ͼ1 .cm-cursor {position: absolute; border-left: 1.2px solid black; margin-left: -0.6px; pointer-events: none; display: none;}
+.ͼ3 .cm-cursor {border-left-color: #444;}
+.ͼ1.cm-focused .cm-cursor {display: block;}
+.ͼ2 .cm-activeLine {background-color: #f3f9ff;}
+.ͼ3 .cm-activeLine {background-color: #223039;}
+.ͼ2 .cm-specialChar {color: red;}
+.ͼ3 .cm-specialChar {color: #f78;}
+.ͼ1 .cm-tab {display: inline-block; overflow: hidden; vertical-align: bottom;}
+.ͼ1 .cm-placeholder {color: #888; display: inline-block;}
+.ͼ1 .cm-button {vertical-align: middle; color: inherit; font-size: 70%; padding: .2em 1em; border-radius: 3px;}
+.ͼ2 .cm-button:active {background-image: linear-gradient(#b4b4b4, #d0d3d6);}
+.ͼ2 .cm-button {background-image: linear-gradient(#eff1f5, #d9d9df); border: 1px solid #888;}
+.ͼ3 .cm-button:active {background-image: linear-gradient(#111, #333);}
+.ͼ3 .cm-button {background-image: linear-gradient(#393939, #111); border: 1px solid #888;}
+.ͼ1 .cm-textfield {vertical-align: middle; color: inherit; font-size: 70%; border: 1px solid silver; padding: .2em .5em;}
+.ͼ2 .cm-textfield {background-color: white;}
+.ͼ3 .cm-textfield {border: 1px solid #555; background-color: inherit;}
+.ͼ1 .cm-a11y-panel {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;}
+.ͼ1 .cm-panels {box-sizing: border-box; position: sticky; left: 0; right: 0;}
+.ͼ2 .cm-panels {background-color: #f5f5f5; color: black;}
+.ͼ2 .cm-panels-top {border-bottom: 1px solid #ddd;}
+.ͼ2 .cm-panels-bottom {border-top: 1px solid #ddd;}
+.ͼ3 .cm-panels {background-color: #333338; color: white;}
+.ͼ1 .cm-selectionMatch {background-color: #99ff7780;}
+.ͼ1 .cm-searchMatch .cm-selectionMatch {background-color: transparent;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > li {cursor: pointer; padding: 1px 1em 1px 3px; line-height: 1.2;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > li[aria-selected] {background: #bdf; background-color: Highlight; color: white; color: HighlightText;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul {font-family: monospace; white-space: nowrap; overflow: auto; max-width: 700px; max-width: min(700px, 95vw); max-height: 10em; list-style: none; margin: 0; padding: 0;}
+.ͼ1 .cm-completionListIncompleteTop:before, .ͼ1 .cm-completionListIncompleteBottom:after {content: "···"; opacity: 0.5; display: block; text-align: center;}
+.ͼ1 .cm-tooltip.cm-completionInfo {position: absolute; padding: 3px 9px; width: max-content; max-width: 300px;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-left {right: 100%;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-right {left: 100%;}
+.ͼ2 .cm-snippetField {background-color: #00000022;}
+.ͼ3 .cm-snippetField {background-color: #ffffff22;}
+.ͼ1 .cm-snippetFieldPosition {vertical-align: text-top; width: 0; height: 1.15em; margin: 0 -0.7px -.7em; border-left: 1.4px dotted #888;}
+.ͼ1 .cm-completionMatchedText {text-decoration: underline;}
+.ͼ1 .cm-completionDetail {margin-left: 0.5em; font-style: italic;}
+.ͼ1 .cm-completionIcon {font-size: 90%; width: .8em; display: inline-block; text-align: center; padding-right: .6em; opacity: 0.6;}
+.ͼ1 .cm-completionIcon-function:after, .ͼ1 .cm-completionIcon-method:after {content: 'ƒ';}
+.ͼ1 .cm-completionIcon-class:after {content: '○';}
+.ͼ1 .cm-completionIcon-interface:after {content: '◌';}
+.ͼ1 .cm-completionIcon-variable:after {content: '𝑥';}
+.ͼ1 .cm-completionIcon-constant:after {content: '𝐶';}
+.ͼ1 .cm-completionIcon-type:after {content: '𝑡';}
+.ͼ1 .cm-completionIcon-enum:after {content: '∪';}
+.ͼ1 .cm-completionIcon-property:after {content: '□';}
+.ͼ1 .cm-completionIcon-keyword:after {content: '🔑︎';}
+.ͼ1 .cm-completionIcon-namespace:after {content: '▢';}
+.ͼ1 .cm-completionIcon-text:after {content: 'abc'; font-size: 50%; vertical-align: middle;}
+.ͼ1 .cm-tooltip {position: fixed; z-index: 100;}
+.ͼ2 .cm-tooltip {border: 1px solid #ddd; background-color: #f5f5f5;}
+.ͼ3 .cm-tooltip {background-color: #333338; color: white;}
+.ͼ1 .cm-matchingBracket {color: #0b0;}
+.ͼ1 .cm-nonmatchingBracket {color: #a22;}
+.ͼ1 .cm-foldPlaceholder {background-color: #eee; border: 1px solid #ddd; color: #888; border-radius: .2em; margin: 0 1px; padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-foldGutter .cm-gutterElement {padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-gutters {display: flex; height: 100%; box-sizing: border-box; left: 0; z-index: 200;}
+.ͼ2 .cm-gutters {background-color: #f5f5f5; color: #999; border-right: 1px solid #ddd;}
+.ͼ3 .cm-gutters {background-color: #333338; color: #ccc;}
+.ͼ1 .cm-gutter {display: flex !important; flex-direction: column; flex-shrink: 0; box-sizing: border-box; height: 100%; overflow: hidden;}
+.ͼ1 .cm-gutterElement {box-sizing: border-box;}
+.ͼ1 .cm-lineNumbers .cm-gutterElement {padding: 0 3px 0 5px; min-width: 20px; text-align: right; white-space: nowrap;}
+.ͼ2 .cm-activeLineGutter {background-color: #e2f2ff;}
+.ͼ3 .cm-activeLineGutter {background-color: #222227;}
+.ͼ5 {text-decoration: underline;}
+.ͼ6 {text-decoration: underline; font-weight: bold;}
+.ͼ7 {font-style: italic;}
+.ͼ8 {font-weight: bold;}
+.ͼ9 {text-decoration: line-through;}
+.ͼa {color: #708;}
+.ͼb {color: #219;}
+.ͼc {color: #164;}
+.ͼd {color: #a11;}
+.ͼe {color: #e40;}
+.ͼf {color: #00f;}
+.ͼg {color: #30a;}
+.ͼh {color: #085;}
+.ͼi {color: #167;}
+.ͼj {color: #256;}
+.ͼk {color: #00c;}
+.ͼl {color: #940;}
+.ͼm {color: #7a757a;}
+.ͼn {color: #f00;}
+.ͼ4 .cm-line ::selection {background-color: transparent !important;}
+.ͼ4 .cm-line::selection {background-color: transparent !important;}
+.ͼ4 .cm-line {caret-color: transparent !important;}
+</style><style type="text/css">.turbo-progress-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #0076ff;
+  z-index: 9999;
+  transition:
+    width 300ms ease-out,
+    opacity 150ms 150ms ease-in;
+  transform: translate3d(0, 0, 0);
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Twitter Card data -->
+
+
+
+
+
+
+
+<!-- Open Graph data -->
+
+
+
+
+
+
+
+<!-- Favicon -->
+
+
+
+
+
+
+
+<link rel="stylesheet" media="all" href="./Exercism_files/vendors_application_internal-5ab3f2e8.chunk.css" data-turbo-track="reload">
+<link rel="stylesheet" media="all" href="./Exercism_files/application-bd9c8fda.chunk.css" data-turbo-track="reload">
+<link rel="stylesheet" media="all" href="./Exercism_files/internal-3c95539e.chunk.css" data-turbo-track="reload">
+<script src="./Exercism_files/runtime_core-5da017c726e6e46fab8d.js.download" data-turbo-track="reload"></script>
+<script src="./Exercism_files/vendors_core-b61c7c4db7d38866ebe4.chunk.js.download" data-turbo-track="reload"></script>
+<script src="./Exercism_files/core-7d7e9aafb51c188a5ef4.chunk.js.download" data-turbo-track="reload"></script>
+<script src="./Exercism_files/runtime_application-5145e439a3148b17a035.js.download" data-turbo-track="reload"></script>
+<script src="./Exercism_files/vendors_application_internal_test-687fb7660c98fd791693.chunk.js.download" data-turbo-track="reload"></script>
+<script src="./Exercism_files/vendors_application_internal-b2ef3b01eafab8f821f4.chunk.js.download" data-turbo-track="reload"></script>
+<script src="./Exercism_files/application-2107cb20bd590f366739.chunk.js.download" data-turbo-track="reload"></script>
+<script src="./Exercism_files/runtime_internal-219a52ce79f04a973ff3.js.download" data-turbo-track="reload"></script>
+<script src="./Exercism_files/internal-ef889296c2856039efa3.chunk.js.download" data-turbo-track="reload"></script>
+
+<!-- / TODO - Remove any unused weights -->
+<link href="./Exercism_files/css2" rel="stylesheet">
+<script data-api="/usage/api/event" data-domain="exercism.org" defer="" src="./Exercism_files/script.js.download"></script>
+<script charset="utf-8" src="./Exercism_files/5-22a8e3209896a94f8e69.chunk.js.download"></script><script charset="utf-8" src="./Exercism_files/19-11a27b76c48b872e6ec6.chunk.js.download"></script><script src="./Exercism_files/v3"></script><meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="Qk+miqdDu7ct0anHmvZq1VJn0f3jsi+ioWfi44zWe9zxwIItzfLhHZWifqyoCWAIfuMgL5mNyeA3+6fmsvngCw=="><meta name="action-cable-url" content="wss://exercism.org/cable"><meta content="language-servers-925786784.eu-west-2.elb.amazonaws.com" name="language-server-url"><meta content="https://exercism.org/api/v2/bug_reports" name="bug-reports-url"><meta content="https://exercism.org/api/v2/markdown/parse" name="parse-markdown-url"><meta content="726495" name="user-id"><meta content="pk_live_51IDGMXEoOT0Jqx0UGsyx7fUW7iojTCPobNQDDoVdVY64qsyeNyFDqQRAgXSdj2HF8mYzPGxsBWIEFPnenq0lEhLH00x7KfG52T" name="stripe-publishable-key"><title>Exercism</title><meta content="Learn, practice and get world-class mentoring in over 50 languages. 100% free." name="description"><meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"><meta content="summary_large_image" name="twitter:card"><meta content="@exercism_io" name="twitter:site"><meta content="@exercism_io" name="twitter:creator"><meta content="https://exercism.org/tracks/java/exercises/hello-world/edit" name="twitter:url"><meta content="Exercism" name="twitter:title"><meta content="Learn, practice and get world-class mentoring in over 50 languages. 100% free." name="twitter:description"><meta content="https://dg8krxphbh767.cloudfront.net/meta/og.png" name="twitter:image"><meta content="Exercism" property="og:title"><meta content="website" property="og:type"><meta content="https://exercism.org/tracks/java/exercises/hello-world/edit" property="og:url"><meta content="https://dg8krxphbh767.cloudfront.net/meta/og.png" property="og:image"><meta content="Learn, practice and get world-class mentoring in over 50 languages. 100% free." property="og:description"><meta content="Exercism" property="og:site_name"><meta content="744760440" property="fb:admins"><link href="https://dg8krxphbh767.cloudfront.net/meta/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"><link href="https://dg8krxphbh767.cloudfront.net/meta/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"><link href="https://dg8krxphbh767.cloudfront.net/meta/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"><link href="https://exercism.org/site.webmanifest" rel="manifest"><meta content="width=device-width, initial-scale=1" name="viewport"><script charset="utf-8" src="./Exercism_files/16-c5ab8bed762514bb18e7.chunk.js.download"></script><script charset="utf-8" src="./Exercism_files/18-2dfadb66ec9dc987d9c6.chunk.js.download"></script><script charset="utf-8" src="./Exercism_files/1-805904698e89d8be6deb.chunk.js.download"></script><script charset="utf-8" src="./Exercism_files/23-122ef732e259c6a4d571.chunk.js.download"></script></head>
+<body class="namespace-tracks controller-exercises action-edit theme-light user-signed_in" data-new-gr-c-s-loaded="14.1028.0">
+<header id="site-header"><div class="lg-container container"><a class="exercism-link lg:hidden xl:block" href="https://exercism.org/"><img alt="Exercism" class="c-icon" src="./Exercism_files/exercism-with-logo-black-12acde3b7d18cbeee57746528c4e85e4.svg"></a><div class="docs-search"><div class="c-search-bar"><input class="--search" placeholder="Search Exercism&#39;s docs..."></div></div><nav class="signed-in"><ul><li><a href="https://exercism.org/dashboard"><img role="presentation" alt="" class="c-icon" src="./Exercism_files/dashboard-a27f2f14ebed2926914083aa8804f0a9.svg"><span>Dashboard</span></a></li><li class="selected" aria-current="page"><a href="https://exercism.org/tracks"><img role="presentation" alt="" class="c-icon" src="./Exercism_files/tracks-efdca90d8b724f3a545fdb9861105aa7.svg"><span>Tracks</span></a></li><li><a href="https://exercism.org/mentoring/inbox"><img role="presentation" alt="" class="c-icon" src="./Exercism_files/mentoring-0a3b6d95eb69e64d7a5f9148ac38cb91.svg"><span>Mentoring</span></a></li><li><a href="https://exercism.org/contributing"><img role="presentation" alt="" class="c-icon" src="./Exercism_files/contribute-d29438caff47af31e0fd183eb6af776f.svg"><span>Contribute</span></a></li><li><a href="https://exercism.org/donate"><img role="presentation" alt="" class="c-icon" src="./Exercism_files/contribute-d29438caff47af31e0fd183eb6af776f.svg"><span>Donate 💜</span></a></li></ul></nav><div class="user-section"><a class="new-badge" href="https://exercism.org/journey/badges#journey-content"></a><div class="c-react-component c-react-wrapper-dropdowns-notifications --hydrated" data-react-dropdowns-notifications="true" data-react-data="{&quot;endpoint&quot;:&quot;https://exercism.org/api/v2/notifications?order=unread_first&quot;}"><button class="c-notification --none" aria-label="Open notifications" aria-controls="cf775179-1d84-4090-af54-ac753aad09ef" aria-haspopup="true"><img src="./Exercism_files/notifications-874919840a267a6e8aa1107ff7e6ecfc.svg" alt="You have 0 notifications" class="c-icon"><div class="--count">0</div></button></div><div class="c-react-component c-react-wrapper-dropdowns-reputation --hydrated" data-react-dropdowns-reputation="true" data-react-data="{&quot;reputation&quot;:&quot;0&quot;,&quot;is_seen&quot;:true,&quot;endpoint&quot;:&quot;https://exercism.org/api/v2/reputation?order=unseen_first\u0026per_page=5&quot;}"><button class="c-primary-reputation" aria-label="0 reputation" aria-controls="c74056c4-c8ba-4315-911a-f508e6f4085d" aria-haspopup="true"><img src="./Exercism_files/reputation-fa230cf4d89ede908a0c91cb571ee843.svg" alt="Reputation" class="c-icon"><span>0</span><div class="--notification "></div></button></div><div class="c-react-component c-react-wrapper-dropdowns-dropdown --hydrated" data-react-dropdowns-dropdown="true" data-react-data="{&quot;menu_button&quot;:{&quot;label&quot;:&quot;Button to open the profile menu&quot;,&quot;className&quot;:&quot;user-menu&quot;,&quot;html&quot;:&quot;\u003cdiv class=\&quot;c-avatar\&quot; style=\&quot;background-image:url(\u0026quot;https://avatars.githubusercontent.com/u/90405842?v=4\u0026quot;)\&quot;\u003e\u003cimg alt=\&quot;Uploaded avatar of WalterShelby\&quot; class=\&quot;sr-only\&quot; src=\&quot;https://avatars.githubusercontent.com/u/90405842?v=4\&quot; /\u003e\u003c/div\u003e\u003cimg alt=\&quot;Profile Menu\&quot; class=\&quot;c-icon\&quot; src=\&quot;https://d24y9kuxp2d7l2.cloudfront.net/packs/media/images/icons/more-vertical-719f8abce7c641c8b2ea397e8177edea.svg\&quot; /\u003e&quot;},&quot;menu_items&quot;:[{&quot;html&quot;:&quot;\u003ca href=\&quot;/profiles/intro\&quot;\u003e\u003cdiv class=\&quot;c-avatar\&quot; style=\&quot;background-image:url(\u0026quot;https://avatars.githubusercontent.com/u/90405842?v=4\u0026quot;)\&quot;\u003e\u003cimg alt=\&quot;Your uploaded avatar\&quot; class=\&quot;sr-only\&quot; src=\&quot;https://avatars.githubusercontent.com/u/90405842?v=4\&quot; /\u003e\u003c/div\u003e\u003cdiv class=\&quot;info\&quot;\u003e\u003cdiv class=\&quot;name\&quot;\u003eWalterShelby\u003c/div\u003e\u003cdiv class=\&quot;handle\&quot;\u003e@WalterShelby\u003c/div\u003e\u003c/div\u003e\u003cimg alt=\&quot;Open public profile\&quot; class=\&quot;c-icon\&quot; src=\&quot;https://d24y9kuxp2d7l2.cloudfront.net/packs/media/images/icons/external-link-1ec396355fc69159e03608243da57ec1.svg\&quot; /\u003e\u003c/a\u003e&quot;,&quot;className&quot;:&quot;profile&quot;},{&quot;html&quot;:&quot;\u003cdiv class=\&quot;c-primary-reputation\&quot; aria-label=\&quot;0 reputation\&quot;\u003e\u003cimg alt=\&quot;Reputation\&quot; class=\&quot;c-icon\&quot; src=\&quot;https://d24y9kuxp2d7l2.cloudfront.net/packs/media/images/icons/reputation-fa230cf4d89ede908a0c91cb571ee843.svg\&quot; /\u003e\u003cspan\u003e0\u003c/span\u003e\u003c/div\u003e&quot;,&quot;className&quot;:&quot;reputation&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/dashboard\&quot;\u003eDashboard\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt site-link&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/tracks\&quot;\u003eTracks\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt site-link&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/mentoring/inbox\&quot;\u003eMentoring\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt site-link&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/contributing\&quot;\u003eContribute\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt site-link&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/donate\&quot;\u003eDonate 💜\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt site-link donate&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/profiles/intro\&quot;\u003ePublic Profile\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/journey\&quot;\u003eYour Journey\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt&quot;},{&quot;html&quot;:&quot;\u003ca href=\&quot;/settings\&quot;\u003eSettings\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt&quot;},{&quot;html&quot;:&quot;\u003ca rel=\&quot;nofollow\&quot; data-method=\&quot;delete\&quot; href=\&quot;/users/sign_out\&quot;\u003eSign out\u003c/a\u003e&quot;,&quot;className&quot;:&quot;opt&quot;}]}"><button class="user-menu " aria-label="Button to open the profile menu" aria-controls="d7af08fe-4f10-4f75-b6ea-b34fa1880193" aria-haspopup="true"><div class="c-avatar" style="background-image:url(&quot;https://avatars.githubusercontent.com/u/90405842?v=4&quot;)"><img alt="Uploaded avatar of WalterShelby" class="sr-only" src="./Exercism_files/90405842"></div><img alt="Profile Menu" class="c-icon" src="./Exercism_files/more-vertical-719f8abce7c641c8b2ea397e8177edea.svg"></button></div></div></div></header>
+<div class="c-react-component c-react-wrapper-editor --hydrated" data-react-editor="true" data-react-data="{&quot;default_submissions&quot;:[],&quot;default_files&quot;:[{&quot;filename&quot;:&quot;src/main/java/Greeter.java&quot;,&quot;type&quot;:&quot;exercise&quot;,&quot;content&quot;:&quot;class Greeter {\n\n    String getGreeting() {\n        return \&quot;Goodbye, Mars!\&quot;;\n    }\n\n}\n&quot;}],&quot;default_settings&quot;:{&quot;tab_size&quot;:4,&quot;use_soft_tabs&quot;:true},&quot;autosave&quot;:{&quot;key&quot;:&quot;25c3e97997a8496d9ea5f2398904bc7b&quot;,&quot;save_interval&quot;:500},&quot;panels&quot;:{&quot;instructions&quot;:{&quot;introduction&quot;:&quot;&quot;,&quot;assignment&quot;:{&quot;overview&quot;:&quot;\u003cp\u003eThe classical introductory exercise. Just say \&quot;Hello, World!\&quot;.\u003c/p\u003e\n\u003cp\u003e\u003ca href=\&quot;http://en.wikipedia.org/wiki/%22Hello,_world!%22_program\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener\&quot;\u003e\&quot;Hello, World!\&quot;\u003c/a\u003e is\nthe traditional first program for beginning programming in a new language\nor environment.\u003c/p\u003e\n\u003cp\u003eThe objectives are simple:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eWrite a function that returns the string \&quot;Hello, World!\&quot;.\u003c/li\u003e\n\u003cli\u003eRun the test suite and make sure that it succeeds.\u003c/li\u003e\n\u003cli\u003eSubmit your solution and check it at the website.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eIf everything goes well, you will be ready to fetch your first real exercise.\u003c/p\u003e\n\u003cp\u003eSince this is your first Java exercise, we&#39;ve included a detailed TUTORIAL.md\nfile that guides you through your solution. Check it out for tips and\nassistance!\u003c/p\u003e\n&quot;,&quot;general_hints&quot;:[],&quot;tasks&quot;:[]},&quot;debugging_instructions&quot;:null},&quot;tests&quot;:{&quot;tests&quot;:&quot;import org.junit.Test;\n\nimport static org.junit.Assert.assertEquals;\n\npublic class GreeterTest {\n\n    @Test\n    public void testThatGreeterReturnsTheCorrectGreeting() {\n        assertEquals(\&quot;Hello, World!\&quot;, new Greeter().getGreeting());\n    }\n\n}\n&quot;,&quot;highlightjs_language&quot;:&quot;java&quot;},&quot;results&quot;:{&quot;average_test_duration&quot;:13.0}},&quot;track&quot;:{&quot;title&quot;:&quot;Java&quot;,&quot;slug&quot;:&quot;java&quot;},&quot;exercise&quot;:{&quot;title&quot;:&quot;Hello World&quot;},&quot;links&quot;:{&quot;run_tests&quot;:&quot;https://exercism.org/api/v2/solutions/25c3e97997a8496d9ea5f2398904bc7b/submissions&quot;,&quot;back&quot;:&quot;/tracks/java/exercises/hello-world&quot;}}"><div id="page-editor"><div class="header"><a href="https://exercism.org/tracks/java/exercises/hello-world" class="close-btn"><img src="./Exercism_files/arrow-left-b822c288e05779c6c18d9f492fac8c30.svg" alt="" role="presentation" class="c-icon">Back to Exercise</a><div class="title"><div class="track">Java</div><div class="divider">/</div><div class="exercise">Hello World</div></div><div class="options"><button class="settings-btn" aria-controls="109a5dca-a158-4801-a97d-0e23de035670" aria-haspopup="true"><img src="./Exercism_files/settings-4cc40e9893bb72953f23650f0bb6e29d.svg" alt="Settings" class="c-icon"></button><button aria-controls="ac959c82-6cdb-42c0-b2f8-a072662006f7" aria-haspopup="true" class="more-btn"><img src="./Exercism_files/more-horizontal-eca1a9a537fa11719cd86f96419e1ad2.svg" alt="Open more options" class="c-icon"></button></div></div><div class="c-split-pane"><div class="--split-lhs" style="min-width: 100px;"><div class="c-iteration-pane"><div class="tabs"><button class="c-tab  selected" role="tab" aria-selected="true" aria-controls="panel-src/main/java/Greeter.java" id="tab-src/main/java/Greeter.java" tabindex="0">src/main/java/Greeter.java</button></div><div id="panel-src/main/java/Greeter.java" role="tabpanel" aria-labelledby="tab-src/main/java/Greeter.java" tabindex="0" class="--tab-panel undefined"><div class="editor"><div class="cm-editor cm-wrap cm-focused ͼ1 ͼ2 ͼ4"><div class="cm-panels cm-panels-top" style="top: 0px;"><div class="cm-a11y-panel cm-panel" aria-live="assertive" aria-atomic="true"></div></div><div aria-live="polite" style="position: absolute; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="mix-blend-mode: darken; position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><div class="cm-gutters" aria-hidden="true" style="position: sticky; min-height: 196px;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">9</div><div class="cm-gutterElement" style="height: 24px;">1</div><div class="cm-gutterElement" style="height: 24px;">2</div><div class="cm-gutterElement" style="height: 24px;">3</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 24px;">4</div><div class="cm-gutterElement" style="height: 24px;">5</div><div class="cm-gutterElement" style="height: 24px;">6</div><div class="cm-gutterElement" style="height: 24px;">7</div><div class="cm-gutterElement" style="height: 24px;">8</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement" style="height: 24px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 24px; margin-top: 24px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 24px;"></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" contenteditable="true" class="cm-content cm-lineWrapping focus-visible" style="tab-size: 4;" role="textbox" aria-multiline="true" aria-autocomplete="list" data-focus-visible-added=""><div class="cm-line"><span class="ͼa">class</span> <span class="ͼf">Greeter</span> {</div><div class="cm-line"><br></div><div class="cm-line">    <span class="ͼh">String</span> <span class="ͼf">getGreeting</span>() {</div><div class="cm-activeLine cm-line">        <span class="ͼa">return</span> <span class="ͼd">"Hello World!"</span>;</div><div class="cm-line">    }</div><div class="cm-line"><br></div><div class="cm-line">}</div><div class="cm-line"><br></div></div><div class="cm-selectionLayer" aria-hidden="true"></div><div class="cm-cursorLayer" aria-hidden="true" style="animation-duration: 1200ms; animation-name: cm-blink;"><div class="cm-cursor cm-cursor-primary" style="left: 316px; top: 74px; height: 19px;"></div></div></div></div></div></div></div><footer class="lhs-footer"><div class="run-tests-btn"><button type="button" class="btn-enhanced btn-s" disabled=""><img src="./Exercism_files/run-tests-e40b3f75ef874cd9bb6c94023b0cf503.svg" alt="" role="presentation" class="c-icon"><span>Run Tests</span></button></div><div class="submit-btn"><button type="button" disabled="" class="btn-primary btn-s"><span>Submit</span></button></div></footer></div><div class="--split-divider"></div><div class="--split-rhs" style="min-width: 100px;"><div class="tabs"><button class="c-tab " role="tab" aria-selected="false" aria-controls="panel-instructions" id="tab-instructions" tabindex="-1"><img src="./Exercism_files/instructions-8c432123295aa69063570c89371bafc1.svg" alt="" role="presentation" class="c-icon"><span data-text="Instructions">Instructions</span></button><button class="c-tab " role="tab" aria-selected="false" aria-controls="panel-tests" id="tab-tests" tabindex="-1"><img src="./Exercism_files/tests-57f44753d4f4301f9d7d337b72ceb1ec.svg" alt="" role="presentation" class="c-icon"><span data-text="Tests">Tests</span></button><button class="c-tab  selected" role="tab" aria-selected="true" aria-controls="panel-results" id="tab-results" tabindex="0"><img src="./Exercism_files/test-results-f94d67808b23c71ccd54567aac75bc88.svg" alt="" role="presentation" class="c-icon"><span data-text="Results">Results</span></button></div><div id="panel-instructions" role="tabpanel" aria-labelledby="tab-instructions" tabindex="0" class="--tab-panel undefined" style="display: none;"><section class="instructions-pane"><div class="c-textual-content --small"><div class="instructions"><h2>Instructions</h2><div class="content"><p>The classical introductory exercise. Just say "Hello, World!".</p>
+<p><a href="http://en.wikipedia.org/wiki/%22Hello,_world!%22_program" target="_blank" rel="noopener">"Hello, World!"</a> is
+the traditional first program for beginning programming in a new language
+or environment.</p>
+<p>The objectives are simple:</p>
+<ul>
+<li>Write a function that returns the string "Hello, World!".</li>
+<li>Run the test suite and make sure that it succeeds.</li>
+<li>Submit your solution and check it at the website.</li>
+</ul>
+<p>If everything goes well, you will be ready to fetch your first real exercise.</p>
+<p>Since this is your first Java exercise, we've included a detailed TUTORIAL.md
+file that guides you through your solution. Check it out for tips and
+assistance!</p>
+</div></div></div></section></div><div id="panel-tests" role="tabpanel" aria-labelledby="tab-tests" tabindex="0" class="--tab-panel tests c-code-pane" style="display: none;"><pre><code class="java hljs language-java" data-highlight-line-numbers="true" data-highlight-line-number-start="1" data-highlighted="true"><ul><li>
+          <div class="idx">1</div>
+          <div class="loc"><span class="hljs-keyword">import</span> org.junit.Test;</div>
+        </li><li>
+          <div class="idx">2</div>
+          <div class="loc"></div>
+        </li><li>
+          <div class="idx">3</div>
+          <div class="loc"><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.Assert.assertEquals;</div>
+        </li><li>
+          <div class="idx">4</div>
+          <div class="loc"></div>
+        </li><li>
+          <div class="idx">5</div>
+          <div class="loc"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">GreeterTest</span> {</div>
+        </li><li>
+          <div class="idx">6</div>
+          <div class="loc"></div>
+        </li><li>
+          <div class="idx">7</div>
+          <div class="loc">    <span class="hljs-meta">@Test</span></div>
+        </li><li>
+          <div class="idx">8</div>
+          <div class="loc">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testThatGreeterReturnsTheCorrectGreeting</span><span class="hljs-params">()</span> {</div>
+        </li><li>
+          <div class="idx">9</div>
+          <div class="loc">        assertEquals(<span class="hljs-string">"Hello, World!"</span>, <span class="hljs-keyword">new</span> <span class="hljs-title class_">Greeter</span>().getGreeting());</div>
+        </li><li>
+          <div class="idx">10</div>
+          <div class="loc">    }</div>
+        </li><li>
+          <div class="idx">11</div>
+          <div class="loc"></div>
+        </li><li>
+          <div class="idx">12</div>
+          <div class="loc">}</div>
+        </li><li>
+          <div class="idx">13</div>
+          <div class="loc"></div>
+        </li></ul></code></pre></div><div id="panel-results" role="tabpanel" aria-labelledby="tab-results" tabindex="0" class="--tab-panel undefined" style=""><section class="results"><div class="c-test-run"><div class="summary-status failed" role="status"><span class="--dot"></span><span>1 test failure</span></div><div class="tests-list"><details open="" class="tests-group c-details"><summary class="tests-group-summary"><div class="--summary-inner"><img src="https://exercism-v3-assets.s3.eu-west-2.amazonaws.com/packs/media/images/icons/failed-check-circle-ecdcbc6f997520ba9e4ec6ab8c105ad6.svg" alt="" role="presentation" class="c-icon indicator">1 test failed<img src="https://exercism-v3-assets.s3.eu-west-2.amazonaws.com/packs/media/images/icons/chevron-right-8f015796a7b0738c7b685aa9db70cfc3.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="https://exercism-v3-assets.s3.eu-west-2.amazonaws.com/packs/media/images/icons/chevron-down-251a3f80ac5e7f1016acb3d408da03a4.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><details class="c-details c-test-summary fail" open=""><summary class="--summary"><div class="--summary-inner"><div class="--status"><div class="--dot"></div><span>Failed</span></div><div class="--summary-details"><div class="--summary-idx">Test 1</div><div class="--summary-name">testThatGreeterReturnsTheCorrectGreeting</div></div><img src="https://exercism-v3-assets.s3.eu-west-2.amazonaws.com/packs/media/images/icons/chevron-right-8f015796a7b0738c7b685aa9db70cfc3.svg" alt="" role="presentation" class="c-icon --closed-icon"><img src="https://exercism-v3-assets.s3.eu-west-2.amazonaws.com/packs/media/images/icons/chevron-down-251a3f80ac5e7f1016acb3d408da03a4.svg" alt="" role="presentation" class="c-icon --open-icon"></div></summary><div class="--explanation"><div class="--info"><h3>Test Failure</h3><pre>expected:&lt;Hello[,] World!&gt; but was:&lt;Hello[] World!&gt;org.junit.ComparisonFailure: expected:&lt;Hello[,] World!&gt; but was:&lt;Hello[] World!&gt;[
+ at org.junit.Assert.assertEquals(Assert.java:117), 
+ at org.junit.Assert.assertEquals(Assert.java:146), 
+ at GreeterTest.testThatGreeterReturnsTheCorrectGreeting(GreeterTest.java:9), 
+ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method), 
+ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62), 
+ at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43), 
+ at java.base/java.lang.reflect.Method.invoke(Method.java:566), 
+ at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59), 
+ at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12), 
+ at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56), 
+ at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17), 
+ at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306), 
+ at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100), 
+ at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366), 
+ at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103), 
+ at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63), 
+ at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331), 
+ at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79), 
+ at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329), 
+ at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66), 
+ at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293), 
+ at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306), 
+ at org.junit.runners.ParentRunner.run(ParentRunner.java:413), 
+ at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110), 
+ at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58), 
+ at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38), 
+ at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62), 
+ at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51), 
+ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method), 
+ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62), 
+ at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43), 
+ at java.base/java.lang.reflect.Method.invoke(Method.java:566), 
+ at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36), 
+ at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24), 
+ at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33), 
+ at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94), 
+ at com.sun.proxy.$Proxy2.processTestClass(Unknown Source), 
+ at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:119), 
+ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method), 
+ at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62), 
+ at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43), 
+ at java.base/java.lang.reflect.Method.invoke(Method.java:566), 
+ at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36), 
+ at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24), 
+ at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182), 
+ at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164), 
+ at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414), 
+ at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64), 
+ at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48), 
+ at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128), 
+ at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628), 
+ at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56), 
+ at java.base/java.lang.Thread.run(Thread.java:834)]</pre></div></div></details></details></div></div></section></div></div></div></div></div>
+
+
+<div id="portal-container"></div>
+<div class="c-loading-overlay"></div>
+<footer id="site-footer"><div class="lg-container">
+<div class="nfp mb-40 md:mb-58">
+<img role="presentation" alt="" class="c-icon" src="./Exercism_files/exercism-face-gradient-5c57b65f98e7ea38d6623798771690ab.svg">
+<h2 class="text-h2 mb-32">Help us keep Exercism free for everyone, everywhere.</h2>
+<div class="c-react-component c-react-wrapper-donations-footer-form --hydrated" data-react-donations-footer-form="true" data-react-data="{&quot;request&quot;:{&quot;endpoint&quot;:&quot;https://exercism.org/api/v2/donations/active_subscription&quot;,&quot;options&quot;:{&quot;initial_data&quot;:{&quot;subscription&quot;:null}}},&quot;user_signed_in&quot;:true,&quot;links&quot;:{&quot;settings&quot;:&quot;https://exercism.org/settings/donations&quot;}}"><form class="donations-form flex flex-col md:flex-row items-stretch"><div class="amounts mb-16 md:mb-0"><button class="btn-m selected" type="button">$16</button><button class="btn-m" type="button">$32</button><button class="btn-m" type="button">$64</button><button class="btn-m" type="button">$128</button><label class="c-faux-input"><div class="icon">$</div><input type="number" min="0" step="0.01" placeholder="Custom amount" value=""></label></div><button class="btn-m continue-btn w-100 md:w-auto md:h-auto md:ml-32"><span>Continue</span><img src="./Exercism_files/arrow-right-6d6ad99bb104736f9061ce192d7c5938.svg" alt="" role="presentation" class="c-icon"></button></form></div>
+<h3 class="text-h4 mt-32 mb-8">Exercism is open source and 100% free.</h3>
+<p class="text-p-large">Help us provide opportunity for people of all backgrounds by helping them develop their programming skills through code practice and mentorship.</p>
+</div>
+<hr>
+<div class="site-links mt-24 md:mt-56">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-x-40">
+<div class="col">
+<h3>Editions</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/">Exercism</a></li>
+<li><a href="https://exercism.org/docs/using/editions/teams">Exercism for Teams</a></li>
+<li><a href="https://exercism.org/docs/using/editions/research">Exercism Research</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>About</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/about">About Exercism</a></li>
+<li><a href="https://exercism.org/team">Our team</a></li>
+<li><a href="https://exercism.org/contributing/contributors">Contributors</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>Get involved</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/contributing">Contribute</a></li>
+<li><a href="https://exercism.org/mentoring">Mentor</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>Legal &amp; policies</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/docs/using/legal/terms-of-service">Terms of usage</a></li>
+<li><a href="https://exercism.org/docs/using/legal/privacy-policy">Privacy policy</a></li>
+<li><a href="https://exercism.org/docs/using/legal/cookie-policy">Cookie policy</a></li>
+<li><a href="https://exercism.org/docs/using/legal/code-of-conduct">Code of conduct</a></li>
+<li><a href="https://exercism.org/docs/using/legal/accessibility">Accessibility statement</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>Keep in touch</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/blog">Exercism's blog</a></li>
+<li><a href="https://github.com/exercism/exercism">Discuss on GitHub</a></li>
+<li><a href="https://exercism.org/docs/using/contact">Contact us</a></li>
+<li><a href="https://exercism.org/docs/using/report-abuse">Report abuse</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>Get help</h3>
+<hr class="c-divider --small">
+<ul>
+<li><a href="https://exercism.org/docs">Exercism's Docs</a></li>
+<li><a href="https://exercism.org/docs/using/getting-started">Getting started</a></li>
+<li><a href="https://exercism.org/docs/using/faqs">FAQs</a></li>
+<li><a href="https://exercism.org/docs/using/solving-exercises/working-locally">Installing the CLI</a></li>
+<li><a href="https://exercism.org/cli-walkthrough">Interactive CLI Walkthrough</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="socials mt-24 mb-40 md:mb-56">
+<a class="icon twitter" href="https://twitter.com/exercism_io"><img role="presentation" alt="" class="c-icon" src="./Exercism_files/external-site-twitter-a22652231ac674d2e8a67460bae4f7ec.svg">
+</a><a class="icon facebook" href="https://facebook.com/exercism.io"><img role="presentation" alt="" class="c-icon" src="./Exercism_files/external-site-facebook-2d59d2b4740b0d233958b99bf33b4b20.svg">
+</a><a class="icon github" href="https://github.com/exercism"><img role="presentation" alt="" class="c-icon" src="./Exercism_files/external-site-github-5b0813020f1d24fefaba1aff22a44131.svg">
+</a></div>
+<hr>
+<div class="tracks mt-32 md:mt-48 mb-32 md:mb-48 md:items-center">
+<div class="hidden md:block">
+<h2 class="text-h3">Our programming language tracks</h2>
+<hr class="c-divider mt-28 mb-36">
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-x-32">
+<div class="col">
+<ul>
+<li><a href="https://exercism.org/tracks/bash">Bash</a></li>
+<li><a href="https://exercism.org/tracks/c">C</a></li>
+<li><a href="https://exercism.org/tracks/csharp">C#</a></li>
+<li><a href="https://exercism.org/tracks/cpp">C++</a></li>
+<li><a href="https://exercism.org/tracks/cfml">CFML</a></li>
+<li><a href="https://exercism.org/tracks/clojure">Clojure</a></li>
+<li><a href="https://exercism.org/tracks/clojurescript">ClojureScript</a></li>
+<li><a href="https://exercism.org/tracks/coffeescript">CoffeeScript</a></li>
+<li><a href="https://exercism.org/tracks/common-lisp">Common Lisp</a></li>
+<li><a href="https://exercism.org/tracks/crystal">Crystal</a></li>
+<li><a href="https://exercism.org/tracks/d">D</a></li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li><a href="https://exercism.org/tracks/dart">Dart</a></li>
+<li><a href="https://exercism.org/tracks/delphi">Delphi Pascal</a></li>
+<li><a href="https://exercism.org/tracks/elixir">Elixir</a></li>
+<li><a href="https://exercism.org/tracks/elm">Elm</a></li>
+<li><a href="https://exercism.org/tracks/emacs-lisp">Emacs Lisp</a></li>
+<li><a href="https://exercism.org/tracks/erlang">Erlang</a></li>
+<li><a href="https://exercism.org/tracks/fsharp">F#</a></li>
+<li><a href="https://exercism.org/tracks/fortran">Fortran</a></li>
+<li><a href="https://exercism.org/tracks/go">Go</a></li>
+<li><a href="https://exercism.org/tracks/groovy">Groovy</a></li>
+<li><a href="https://exercism.org/tracks/haskell">Haskell</a></li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li><a href="https://exercism.org/tracks/java">Java</a></li>
+<li><a href="https://exercism.org/tracks/javascript">JavaScript</a></li>
+<li><a href="https://exercism.org/tracks/julia">Julia</a></li>
+<li><a href="https://exercism.org/tracks/kotlin">Kotlin</a></li>
+<li><a href="https://exercism.org/tracks/lfe">LFE</a></li>
+<li><a href="https://exercism.org/tracks/lua">Lua</a></li>
+<li><a href="https://exercism.org/tracks/mips">MIPS Assembly</a></li>
+<li><a href="https://exercism.org/tracks/nim">Nim</a></li>
+<li><a href="https://exercism.org/tracks/objective-c">Objective-C</a></li>
+<li><a href="https://exercism.org/tracks/ocaml">OCaml</a></li>
+<li><a href="https://exercism.org/tracks/perl5">Perl 5</a></li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li><a href="https://exercism.org/tracks/pharo-smalltalk">Pharo</a></li>
+<li><a href="https://exercism.org/tracks/php">PHP</a></li>
+<li><a href="https://exercism.org/tracks/plsql">PL/SQL</a></li>
+<li><a href="https://exercism.org/tracks/prolog">Prolog</a></li>
+<li><a href="https://exercism.org/tracks/purescript">PureScript</a></li>
+<li><a href="https://exercism.org/tracks/python">Python</a></li>
+<li><a href="https://exercism.org/tracks/r">R</a></li>
+<li><a href="https://exercism.org/tracks/racket">Racket</a></li>
+<li><a href="https://exercism.org/tracks/raku">Raku</a></li>
+<li><a href="https://exercism.org/tracks/reasonml">ReasonML</a></li>
+<li><a href="https://exercism.org/tracks/ruby">Ruby</a></li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li><a href="https://exercism.org/tracks/rust">Rust</a></li>
+<li><a href="https://exercism.org/tracks/scala">Scala</a></li>
+<li><a href="https://exercism.org/tracks/scheme">Scheme</a></li>
+<li><a href="https://exercism.org/tracks/sml">Standard ML</a></li>
+<li><a href="https://exercism.org/tracks/swift">Swift</a></li>
+<li><a href="https://exercism.org/tracks/tcl">Tcl</a></li>
+<li><a href="https://exercism.org/tracks/typescript">TypeScript</a></li>
+<li><a href="https://exercism.org/tracks/vbnet">VB.NET</a></li>
+<li><a href="https://exercism.org/tracks/vimscript">Vim script</a></li>
+<li><a href="https://exercism.org/tracks/wren">Wren</a></li>
+<li><a href="https://exercism.org/tracks/x86-64-assembly">x86-64 Assembly</a></li>
+</ul>
+</div>
+<div class="col hidden md:block mt-32 xl:mt-0">
+<h3 class="text-h6">Want to add a language track to Exercism?</h3>
+<p class="text-p-base">
+<a href="https://github.com/exercism/exercism/issues/new?title=Create%20new%20track%20for%20[LANGUAGE]">Open an issue</a>
+and let's discuss it.
+</p>
+</div>
+</div>
+</div>
+<hr>
+<div class="legals mt-24 md:mt-32 mb-32 md:mb-40 flex md:items-center flex-col md:flex-row">
+<div class="company mb-16 md:mb-0 md:mr-32">
+Exercism is not-for-profit organisation registered in the UK with company number
+<a href="https://find-and-update.company-information.service.gov.uk/company/11733062">11733062</a>.
+Its trustees are <a href="https://www.kytrinyx.com/">Katrina Owen</a> and <a href="https://ihid.info/">Jeremy Walker</a>.
+</div>
+<div class="copyright md:ml-auto">
+© 2021 Exercism
+</div>
+</div>
+</div>
+</footer>
+
+
+<!-- TODO: Add test for this! -->
+<div class="ReactModalPortal"></div><div class="ReactModalPortal"></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration><grammarly-popups data-grammarly-shadow-root="true" class="cGcvT"></grammarly-popups></html>

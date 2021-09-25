@@ -1,0 +1,17 @@
+.textalign{
+	text-align:center;
+	text-align:right;
+	text-align:justify;
+}
+
+.textdecoration{
+	text-decoration:line-through;
+	text-decoration:underline;
+	text-decoration:overline;
+}
+.textline{
+	letter-spacing:2px;
+	/*letter-spacing: 20px;*/
+	line-height:30px;
+
+}

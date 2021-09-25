@@ -1,0 +1,42 @@
+ul{
+	list-style:none;
+}
+
+li{
+
+	list-style-type: decimal-leading-zero;
+	border:1px dashed purple;
+	border:3px;
+	border-style:double;
+	border-color:red;
+}
+
+input[type="email"]{
+
+	width:300px;
+	background-color:orange;
+	border-radius:20px;
+}
+
+body{
+	background-image:url("../img/favicon.png");
+	background-repeat:no-repeat;
+	background-position:center;
+	background-attachment:fixed;
+	background-attachment:scroll ;
+}
+
+p{
+	text-transform:uppercase;
+	text-transform:capitalize;
+	font-variant:small-caps;
+	text-indent:50px;
+	font-style:italic;
+	font-weight:bold;
+}
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+.h1{
+	text-shadow:2.5px 2.5px 2px #1199ad;
+
+}
+
+.borderdesign{
+			width:40%;
+
+			background:#1199ad;
+			border-style:;
+}
+
+.fe{
+	border:0px outset;
+}
+
+@font-face{
+	font-family:lobster;
+	src:local(Lobster Two),url(../img/LobsterTwo-Regular.ttf);
+}
+
+.data{
+	font-family:lobster;
+	
+}
+

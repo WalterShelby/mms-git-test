@@ -1,0 +1,68 @@
+.div{
+	width:450px;
+	height:300px;
+	border:1px dotted white;
+	background-color: rgba(127,127,127,0.4);
+	
+}
+
+.textalign{
+	text-align:justify;
+}
+
+.field{
+	border:1px solid white;
+}
+
+
+body{background-image:url('../img/homework.jpg');
+}
+
+.font{
+	font-family:Stick;
+	color:yellow;
+}
+
+.reg{
+	color: yellow;
+}
+
+.fcolor{
+	color:white;
+	text-shadow:-5px -5px 3px black ;
+}
+
+.fgroup{
+	color:white;
+	text-shadow:-5px -5px 3px black ;
+	margin-top:0;
+	margin-left:30px;
+
+}
+
+.formgroup input{
+	padding: 4px 50px;
+	margin-bottom:5px;
+	margin-left:2px;
+}
+
+label .pcode{
+	margin-left:100px;
+}
+
+#pas{
+	margin-left:5px;
+
+}
+
+.fbtu{
+	margin-left:35%;
+}
+
+/*.fbtu button{
+	padding:5px 20px;
+}*/
+
+fieldset{
+	color:yellow;
+}
